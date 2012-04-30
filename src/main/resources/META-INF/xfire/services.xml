@@ -1,0 +1,10 @@
+<beans>
+	<service xmlns="http://xfire.codehaus.org/config/1.0">
+		<name>BabyBook</name>
+		<namespace>http://xfire.codehaus.org/BabyBook</namespace>
+		<serviceClass>com.oak.babybook.web.services.BabyBookService
+		</serviceClass>
+		<implementationClass>com.oak.babybook.web.services.impl.BabyBookServiceImpl
+		</implementationClass>
+	</service>
+</beans>

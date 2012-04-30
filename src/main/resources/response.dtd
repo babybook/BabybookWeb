@@ -1,0 +1,6 @@
+<!ELEMENT response ( field*, file* ) >
+<!ELEMENT field ( #PCDATA ) >
+<!ELEMENT file ( #PCDATA ) >
+ 
+<!ATTLIST file id CDATA #REQUIRED >
+<!ATTLIST field id CDATA #REQUIRED >

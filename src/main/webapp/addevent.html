@@ -1,0 +1,35 @@
+	<html>
+	  <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+	      <title>Add Event</title>
+	  </head>
+	  <body>
+	     <form action="./event" method="post">
+	      <input type="hidden" name="command" value="ADD" />	   
+	      
+	      Event Name : <input type="text" name="name"/><br/>
+	      Location : <input type="text" name="location"/><br/>
+	      <br/>
+	      Description : 
+	      <br/><textarea cols='50' rows='3' name="description"/></textarea><br/>
+	      
+	      <br/>
+		  Date  : <input type="text" name="dateTime" /><br/>
+		  
+		  Event Type : 
+			<select name="eventType">
+  				<option value="FIRST_WORDS">First Words</option>
+			    <option>First Foods</option>
+			    <option>First Steps</option> 
+			    <option>Words</option>
+			    <option>Sayings</option> 				
+			    <option>Other</option>
+			</select><br/>
+	      
+	      <input type="submit" value="Create Event" />
+	      
+	    </form>
+	  </body>
+	</html>
+
+

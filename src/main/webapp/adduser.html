@@ -1,0 +1,33 @@
+	<html>
+	  <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+	      <title>Add User</title>
+	  </head>
+	  <body>
+	     <form action="./user" method="post">
+	      <input type="hidden" name="command" value="ADD" />	   
+	      
+	      First Name : <input type="text" name="first"/><br/>
+	      Middle Name : <input type="text" name="middle"/><br/>
+	      Last Name : <input type="text" name="last"/><br/>
+	      <br/>
+	      User name : <input type="text" name="username"/><br/>
+	      Password : <input type="password" name="password"/><br/>
+	      Confirm Password : <input type="password" name="confirmpassword"/><br/>
+	      
+	      <br/>
+		  Email : <input type="text" name="email" /><br/>
+		  Date of birth : <input type="text" name="dob" /><br/>
+		  Gender : 
+			<select name="gender">
+  				<option value="MALE">Male</option>
+			    <option value="FEMALE">Female</option>  				
+			</select><br/>
+	      
+	      <input type="submit" value="Create User" />
+	      
+	    </form>
+	  </body>
+	</html>
+
+

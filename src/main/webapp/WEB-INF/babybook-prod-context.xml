@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" scope="singleton">
+		<property name="configLocation" value="classpath:babybook-prod.cfg.xml"/>
+	</bean>
+
+	<!--  Data Access Objects -->
+	<bean id="personDao" class="com.oak.babybook.db.impl.PersonDaoImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="sessionFactory"/>
+		</constructor-arg>	
+	</bean>
+	<bean id="userDao" class="com.oak.babybook.db.impl.UserDaoImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="sessionFactory"/>
+		</constructor-arg>	
+	</bean>
+	<bean id="pictureDao" class="com.oak.babybook.db.impl.PictureDaoImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="sessionFactory"/>
+		</constructor-arg>	
+	</bean>
+	<bean id="eventDao" class="com.oak.babybook.db.impl.EventDaoImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="sessionFactory"/>
+		</constructor-arg>	
+	</bean>
+	<bean id="pageDao" class="com.oak.babybook.db.impl.PageDaoImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="sessionFactory"/>
+		</constructor-arg>	
+	</bean>
+	
+	
+	<!--  Services -->
+	<bean id="personService" class="com.oak.babybook.services.impl.PersonServiceImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="personDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="userService" class="com.oak.babybook.services.impl.UserServiceImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="userDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="eventService" class="com.oak.babybook.services.impl.EventServiceImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="eventDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="pictureService" class="com.oak.babybook.services.impl.PictureServiceImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="pictureDao"/>
+		</constructor-arg>
+	</bean>	
+	<bean id="pageService" class="com.oak.babybook.services.impl.PageServiceImpl" scope="prototype">
+		<constructor-arg>
+			<ref local="pageDao"/>
+		</constructor-arg>
+	</bean>	
+	
+	
+</beans>
